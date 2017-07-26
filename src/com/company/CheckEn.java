@@ -21,6 +21,11 @@ public class CheckEn {
                     break;
                 }
 
+                case '2' : {
+                    encrypt = new En2(pass);
+                    pass = encrypt.GenPass();
+                    break;
+                }
 
             }
         }
