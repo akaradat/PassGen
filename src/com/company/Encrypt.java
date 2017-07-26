@@ -1,11 +1,12 @@
 package com.company;
 
 public class Encrypt {
-    private String code;
-    private String pass;
+    protected String code;
+    protected String pass;
 
     public Encrypt(String code) {
         this.code = code;
+        pass = "";
     }
 
     public String GenPass(){
