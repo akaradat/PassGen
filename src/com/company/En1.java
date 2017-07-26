@@ -13,6 +13,7 @@ public class En1 extends Encrypt {
 //        System.out.println(pass);
 //        System.out.println();
 //        System.out.println();
+//        System.out.println("Pass in En1 GenPass is "+ pass);
         return pass;
     }
 }

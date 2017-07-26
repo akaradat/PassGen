@@ -8,10 +8,13 @@ public class Main {
 
         Scanner sn = new Scanner(System.in);
 
-        System.out.print("Enter Pass: ");
+        System.out.print("Enter pass: ");
         String input = sn.nextLine();
-        Encrypt in = new En1(input);
-        System.out.println(in.GenPass());
+        System.out.print("Enter order: ");
+        String order = sn.nextLine();
+
+        CheckEn checkEn = new CheckEn(input,order);
+        System.out.println(checkEn.Getpass());
 
 
     }
