@@ -19,7 +19,10 @@ public class En2 extends Encrypt{
             }
 
             else{
-                pass+=super.code.charAt(i);
+                if(i%2==0)
+                    pass+=(char)((super.code.charAt(i)*7%9-'a')%('z'-'a')+'a');
+                else
+                    pass+=super.code.charAt(i);
             }
 
         }
