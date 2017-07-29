@@ -8,14 +8,17 @@ public class Main {
 
         Scanner sn = new Scanner(System.in);
 
-        System.out.print("Enter pass: ");
+        System.out.print("Do you want to Encrypt oe De crypt(E/D): ");
+        String check = sn.nextLine();
+
+        System.out.print("Enter code: ");
         String input = sn.nextLine();
         System.out.print("Enter order: ");
         String order = sn.nextLine();
 
-        CheckEn checkEn = new CheckEn(input,order);
-        System.out.println(checkEn.GetDePass());
 
+        CheckEn checkEn = new CheckEn(input,order,check);
 
+        System.out.println("Your code: "+checkEn.StartEn());
     }
 }

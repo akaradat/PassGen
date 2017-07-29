@@ -3,12 +3,24 @@ package com.company;
 public class CheckEn {
     private String code;
     private String order;
+    private String check;
     private Encrypt encrypt;
 
-    public CheckEn(String code, String order) {
+    public CheckEn(String code, String order,String check) {
         this.code = code;
         this.order = order;
+        this.check = check;
+    }
 
+    public String StartEn() {
+        if(check.toLowerCase().equals("Encrypt")||check.toLowerCase().equals("e")){
+            return GetEnpass();
+        }
+        else if(check.equals("Decrypt")||check.toLowerCase().equals("d"))
+        {
+            return GetDePass();
+        }
+        else return "Choose e/n";
     }
 
     public String GetEnpass(){
@@ -17,12 +29,17 @@ public class CheckEn {
                 case '1' : {
                     encrypt = new En1(code);
                     code = encrypt.EnPass();
-//                    System.out.println("In Getpass1 is "+ pass);
                     break;
                 }
 
                 case '2' : {
                     encrypt = new En2(code);
+                    code = encrypt.EnPass();
+                    break;
+                }
+
+                case '3' : {
+                    encrypt = new En3(code);
                     code = encrypt.EnPass();
                     break;
                 }
@@ -34,7 +51,7 @@ public class CheckEn {
 
     public String GetDePass()
     {
-        for (int i = 0; i < order.length(); i++) {
+        for (int i = order.length()-1; i >= 0 ; i--) {
             switch (order.charAt(i)){
                 case '1' : {
                     encrypt = new En1(code);
@@ -49,6 +66,11 @@ public class CheckEn {
                     break;
                 }
 
+                case '3' : {
+                    encrypt = new En3(code);
+                    code = encrypt.DePass();
+                    break;
+                }
             }
         }
         return code;
