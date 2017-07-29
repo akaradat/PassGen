@@ -44,6 +44,12 @@ public class CheckEn {
                     break;
                 }
 
+                case '4' : {
+                    encrypt = new En4(code);
+                    code = encrypt.EnPass();
+                    break;
+                }
+
             }
         }
         return code;
@@ -68,6 +74,12 @@ public class CheckEn {
 
                 case '3' : {
                     encrypt = new En3(code);
+                    code = encrypt.DePass();
+                    break;
+                }
+
+                case '4' : {
+                    encrypt = new En4(code);
                     code = encrypt.DePass();
                     break;
                 }
