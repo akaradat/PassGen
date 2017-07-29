@@ -6,25 +6,18 @@ public class En2 extends Encrypt{
     }
 
     @Override
-    public String GenPass() {
+    public String EnPass() {
         for (int i = 0; i < super.code.length(); i++) {
-            if (super.code.charAt(i)>='a'&&super.code.charAt(i)<='z'){
-                pass+=(char)('z'+'a'-super.code.charAt(i));
-//                System.out.println("in a");
-            }
+            pass+=(char)(159-super.code.charAt(i));
+        }
 
-            else if (super.code.charAt(i)>='A'&&super.code.charAt(i)<='Z'){
-                pass+=(char)('Z'+'A'-super.code.charAt(i));
-//                System.out.println("in A");
-            }
+        return pass;
+    }
 
-            else{
-                if(i%2==0)
-                    pass+=(char)((super.code.charAt(i)*7%9-'a')%('z'-'a')+'a');
-                else
-                    pass+=super.code.charAt(i);
-            }
-
+    @Override
+    public String DePass() {
+        for (int i = 0; i < super.code.length(); i++) {
+            pass+=(char)(159-super.code.charAt(i));
         }
 
         return pass;

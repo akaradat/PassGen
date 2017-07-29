@@ -14,7 +14,7 @@ public class Main {
         String order = sn.nextLine();
 
         CheckEn checkEn = new CheckEn(input,order);
-        System.out.println(checkEn.Getpass());
+        System.out.println(checkEn.GetDePass());
 
 
     }

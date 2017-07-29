@@ -9,7 +9,11 @@ public class Encrypt {
         pass = "";
     }
 
-    public String GenPass(){
+    public String EnPass(){
+        return pass;
+    }
+
+    public String DePass() {
         return pass;
     }
 }
