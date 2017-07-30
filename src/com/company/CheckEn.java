@@ -26,6 +26,12 @@ public class CheckEn {
     public String GetEnpass(){
         for (int i = 0; i < order.length(); i++) {
             switch (order.charAt(i)){
+                case '0' : {
+                    encrypt = new En0(code);
+                    code = encrypt.EnPass();
+                    break;
+                }
+
                 case '1' : {
                     encrypt = new En1(code);
                     code = encrypt.EnPass();
@@ -89,6 +95,12 @@ public class CheckEn {
     {
         for (int i = order.length()-1; i >= 0 ; i--) {
             switch (order.charAt(i)){
+                case '0' : {
+                    encrypt = new En0(code);
+                    code = encrypt.DePass();
+                    break;
+                }
+
                 case '1' : {
                     encrypt = new En1(code);
                     code = encrypt.DePass();
@@ -142,6 +154,8 @@ public class CheckEn {
                     code = encrypt.DePass();
                     break;
                 }
+
+
             }
         }
         return code;
