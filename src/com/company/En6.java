@@ -1,8 +1,8 @@
 package com.company;
 
 /***
- *      plus 13 char only a-z
- *      example A -> N
+ *      swap lower to upper
+ *      example a -> A, A -> a
  */
 public class En6 extends Encrypt {
     public En6(String code) {
