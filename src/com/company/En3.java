@@ -1,8 +1,8 @@
 package com.company;
 
 /***
- *      plus 13 char only a-z
- *      example A -> N
+ *      plus 13 char only az
+ *      example A -> N-
  */
 public class En3 extends Encrypt {
     public En3(String code) {
