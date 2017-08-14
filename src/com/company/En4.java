@@ -12,8 +12,8 @@ public class En4 extends Encrypt{
     @Override
     public String EnPass() {
         for (int i = 0; i < super.code.length(); i++) {
-                super.pass += (char) ((super.code.charAt(i) - 32 + 3) % 96 + 32);
-                super.pass += (char) ((super.code.charAt(i) - 32 + 5) % 96 + 32);
+                super.pass += (char) ((super.code.charAt(i) - 32 + 3) % 95 + 32);
+                super.pass += (char) ((super.code.charAt(i) - 32 + 5) % 95 + 32);
 
         }
 //        System.out.println(super.pass.length());
@@ -23,9 +23,7 @@ public class En4 extends Encrypt{
     @Override
     public String DePass() {
         for (int i = 0; i < super.code.length(); i+=2) {
-                super.pass += (char) ((super.code.charAt(i) - 126 - 3) % 96 + 126);
-//            }
-
+                super.pass += (char) ((super.code.charAt(i) - 126 - 3) % 95 + 126);
         }
         return pass;
     }
